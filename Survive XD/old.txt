@@ -1,0 +1,1309 @@
+import turtle
+import math
+import random
+
+#DEF's
+def GameOver():
+    print("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀")
+    print("██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼")
+    print("██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀")
+    print("██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼")
+    print("███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄")
+    print("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼")
+    print("██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼")
+    print("██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼")
+    print("██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼")
+    print("███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄")
+    print("┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼████▄┼┼┼▄▄▄▄▄▄▄┼┼┼▄████┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼▀▀█▄█████████▄█▀▀┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼┼█████████████┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼┼██▀▀▀███▀▀▀██┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼┼██┼┼┼███┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼┼█████▀▄▀█████┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼┼┼███████████┼┼┼┼┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼▄▄▄██┼┼█▀█▀█┼┼██▄▄▄┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼▀▀██┼┼┼┼┼┼┼┼┼┼┼██▀▀┼┼┼┼┼┼┼┼┼")
+    print("┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼")
+
+def Sad():
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠖⠚⠉⠁⠀⠀⠉⠙⠒⢄⠀⠀⠀⠀⠀⠀")
+    print("⠀⠀⠀⠀⠀⠀⠀⢀⠔⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢢⡀⠀⠀⠀")
+    print("⠀⠀⠀⠀⠀⠀⡰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀")
+    print("⠀⠀⠀⠀⠀⢠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢇⠀")
+    print("⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄")
+    print("⠀⠀⠀⠀⢸⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇")
+    print("⠀⠀⠀⠀⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘")
+    print("⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⡄⠀⠀⠀⠀⠀⢀⣶⡆⠀⢠⠇")
+    print("⠀⠀⠀⠀⠀⠀⣣⠀⠀⠀⠀⠀⠀⠀⠙⠛⠁⠀⠀⠀⠀⠀⠈⠛⠁⡰⠃⠀")
+    print("⠀⠀⠀⠀⢠⠞⠋⢳⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀")
+    print("⠀⠀⠀⣰⠋⠀⠀⠀⢷⠙⠲⢤⣀⡀⠀⠀⠀⠀⠴⠴⣆⠴⠚⠁⠀⠀⠀⠀")
+    print("⠀⠀⣰⠃⠀⠀⠀⠀⠘⡇⠀⣀⣀⡉⠙⠒⠒⠒⡎⠉⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⢠⠃⠀⠀⢶⠀⠀⠀⢳⠋⠁⠀⠙⢳⡠⠖⠚⠑⠲⡀⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⡎⠀⠀⠀⠘⣆⠀⠀⠈⢧⣀⣠⠔⡺⣧⠀⡴⡖⠦⠟⢣⠀⠀⠀⠀⠀⠀")
+    print("⢸⠀⠀⠀⠀⠀⢈⡷⣄⡀⠀⠀⠀⠀⠉⢹⣾⠁⠁⠀⣠⠎⠀⠀⠀⠀⠀⠀")
+    print("⠈⠀⠀⠀⠀⠀⡼⠆⠀⠉⢉⡝⠓⠦⠤⢾⠈⠓⠖⠚⢹⠀⠀⠀⠀⠀⠀⠀")
+    print("⢰⡀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⠀⢸⠀⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⠳⡀⠀⠀⠀⠀⠀⠀⣀⢾⠀⠀⠀⠀⣾⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⠀⠈⠐⠢⠤⠤⠔⠚⠁⠘⣆⠀⠀⢠⠋⢧⣀⣀⡼⠀⠀⠀⠀⠀⠀⠀")
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠈⠁⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+
+def kicked_out():
+    print("    ⠀⢀⣶⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠘⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠈⠙⠋⢁⣀⣠⣤⣀⣀⣀⣰⣿⠟⠁⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⣀⣴⣾⣿⣿⣿⣿⣿⠿⠿⠿⠋⠀⠀⠀⠀⣀⣤⣶⡆")
+    print("    ⢠⣾⣿⣿⢿⣿⣿⣿⣿⣧⠀⠀⠀⣀⣤⣴⣾⣿⡿⠟⠋⠀")
+    print("    ⠘⣿⣇⠀⠈⢻⣿⣿⣿⣿⣷⣶⣿⣿⣿⡿⠛⠉⠀⠀⠀⠀")
+    print("    ⠀⢻⣿⡆⠀⠀⣿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠈⠛⠁⠀⠀⢹⣿⣿⡟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠀⠀⠀⠀⠘⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("    ⠀⠀⠀⠀⠀⠀⠀⢿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+
+def win():
+    print("_____.___.                      .__        ")
+    print("\__  |   | ____  __ __  __  _  _|__| ____  ")
+    print(" /   |   |/  _ \|  |  \ \ \/ \/ /  |/    \ ")
+    print(" \____   (  <_> )  |  /  \     /|  |   |  \ ")
+    print(" / ______|\____/|____/    \/\_/ |__|___|  /")
+    print(" \/                                     \/ ")
+
+def shop():
+    print("")
+    print("(1) House")
+    print("(2) Stone of great power")
+    print("(3) Gun")
+    print("(4) Smart Glasses")
+    print("(5) Pear Mec Book Air")
+    print("(6) Nekia 1")
+    print("(7) Robot")
+    print("(8) Map")
+    print("(9) Bag")
+    print("(10) Leave shop and buy later")
+
+    shop = input("What do you want to buy or would u like to leave shop (10) : ")
+    shop = str(shop)
+
+    if shop == "1":
+        pass
+    #TODO:
+
+    if shop == "2":
+        pass
+    #TODO:
+
+    if shop == "3":
+        pass
+    #TODO:
+
+    if shop == "4":
+        pass
+    #TODO:
+
+    if shop == "5":
+        pass
+    #TODO:
+
+    if shop == "6":
+        pass
+    #TODO:
+
+    if shop == "7":
+        pass
+    #TODO:
+
+    if shop == "8":
+        pass
+    #TODO:
+
+    if shop == "9":
+        pass
+    #TODO:
+
+    # REMEMBER TO DO 10
+
+
+    
+print("")
+print("")
+print("")
+start = input("Would you like to use a Graphical User Interface (type GUI) or use a text based interface (type TBI)?: ")
+
+if start == "TBI":
+    print("")
+    print("(1) Trerasterio")
+    print("(2) Morvelastio")
+    print("(3) Syncapedio") 
+    print("(4) Choose a world for me")
+    print("")
+
+    world = input("Please select one of the world choices (Use the number) : ")
+
+    world = str(world)
+
+    if world == "1":
+
+        print("")
+        print("You have entered the world of Trerasterio and see a person comming up to you...")
+        print("He greets you and asks if you want to roll a dice...")
+        print("")
+        print("(1) You roll the dice")
+        print("(2) You ask him what rolling the dice does")
+        print("(3) You run away")
+        print("")
+
+        dice = input("select one of the options (Use the number) : ")
+        print("")
+        print("")
+
+        dice = str(dice)
+
+        if dice == "1":
+            
+            roll = random.randint(1, 3) #IMPORTANT!
+            roll = str(roll)
+
+            if roll == "1":
+                print("")
+                print("You rolled a 1")
+                print("(1) he sais you can roll again but if you get a number below 4, you die...")
+                print("(2) or you can stick with your option...")
+                print("")
+
+                ra = input("Choose an option (Use the number) : ")
+
+                ra = str(ra)
+
+                if ra == "1":
+                    roll2 = random.randint(4, 6)
+
+                    roll2 = str(roll2)
+
+                    if roll2 == "1":
+                        print("You rolled a 1 :(")
+                        print("")
+                        GameOver()
+
+                    if roll2 == "2":
+                        print("You rolled a 2 :(")
+                        print("")
+                        GameOver()
+
+                    if roll2 == "3":
+                        print("You rolled a 3 :(")
+                        print("")
+                        GameOver()
+
+                        
+                    if roll2 == "4":
+                        print("")
+                        print("you rolled a 4!")
+                        print("Well I had fun playing with u but I have to go now, make sure u explore our town")
+                        print("")
+                        print("(1) You explore the town")
+                        print("(2) You go back to Earth")
+
+                        explore = input("Choose an option (Use the numbers): ")
+                        explore = str(explore)
+
+                        if explore == "1":
+                            
+                            print("")
+                            print("You decide to explore the village!")
+                            print("While exploring you fall into the cave...  ")
+                            print("")
+                            print("(1) Go further into the cave")
+                            print("(2) Go back to the town")
+                            print("")
+
+                            cave = input("select a option (use the number): ")
+                            cave = str(cave)
+
+                            if cave == "1":
+                                
+                                print("")
+                                print("You go further into the cave and you see a Giant...")
+                                print("")
+                                print("(1) Fight the giant")
+                                print("(2) Leave the cave")
+                                print("")
+
+                                giant = input("Select a option (use the number): ")
+                                giant = str(giant)
+
+                                if giant == "1":
+                                    
+                                    print("")
+                                    print("did you actually think that you could take down a giant?")
+                                    print("")
+                                    print("PATHETIC")
+                                    print("")
+                                    GameOver()
+                                
+                                if giant == "2":
+                                    print("you leave the cave and the people of the city get mad at you")
+                                    print("")
+                                    print("you get kicked out :( ")
+                                    print("")
+                                    Sad()
+
+
+                            if cave == "2":
+                                print("")
+                                print("You decide to go back to the village")
+                                print("")
+                                print("a random person comes to you and says...")
+                                print('"Hello, Would you like to fight with the crusher?"')
+                               
+                                print("")
+                                print("(1) Fight the crusher")
+                                print("(2) Say NO")
+                                
+                                print("")
+                                fight = input("Select a option (use the number): ")
+                                fight = str(fight)
+
+                                if fight == "1":
+                                    print("")
+                                    print("You decide to fight him")
+                                    print("")
+                                    print("To fight him we are going to play a game of rock paper scissors... looser gets shot")
+                                    print("")
+
+                                    player = input("choose rock, paper or scissor: ")
+
+                                    bot = random.randint(1, 3)
+                                    bot = str(bot)
+
+                                    if bot == "1":
+                                        if player == "rock":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "paper":
+                                            print("The crusher got rock")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "scissors":
+                                            print("The crusher did rock, You lose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                    if bot == "2":
+                                        if player == "rock":
+                                            print("The crusher did paper, you loose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "paper":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "scissors":
+                                            print("The crusher did paper, you win!")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                    if bot == "3":
+                                        if player == "rock":
+                                            print("The crusher did scissors")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "paper":
+                                            print("The crusher did scissors, You loose!")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "scissors":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+                                    
+
+                                if fight == "2":
+                                    print("")
+                                    print("You said No and he got mad at you")
+                                    print("He then decided to shoot you :(")
+                                    print("")
+                                    GameOver()
+
+                        if explore == "2":
+                            print("")
+                            print("You return back to Earth")
+                            print("So lame")
+                            print("")
+                            Sad()
+
+
+
+                    if roll2 == "5":
+                        
+                        print("")
+                        print("you rolled a 5!")
+                        print("Well I had fun playing with u but I have to go now, make sure u explore our town")
+                        print("")
+                        print("(1) You explore the town")
+                        print("(2) You go back to Earth")
+
+                        explore = input("Choose an option (Use the numbers)")
+                        explore = str(explore)
+
+                        if explore == "1":
+                            
+                            print("")
+                            print("You decide to explore the village!")
+                            print("While exploring you fall into the cave...  ")
+                            print("")
+                            print("(1) Explore the cave")
+                            print("(2) Go further into the cave")
+                            print("")
+
+                            cave = input("select a option (use the number)")
+                            cave = str(cave)
+
+                            if cave == "1":
+                                print("")
+                                print("You go further into the cave and you see a Giant...")
+                                print("")
+                                print("(1) Fight the giant")
+                                print("(2) Leave the cave")
+                                print("")
+
+                                giant = input("Select a option (use the number): ")
+                                giant = str(giant)
+
+                                if giant == "1":
+                                    
+                                    print("")
+                                    print("did you actually think that you could take down a giant?")
+                                    print("")
+                                    print("PATHETIC")
+                                    print("")
+                                    GameOver()
+                                
+                                if giant == "2":
+                                    print("you leave the cave and the people of the city get mad at you")
+                                    print("")
+                                    print("you get kicked out :( ")
+                                    print("")
+                                    Sad()
+
+
+                            if cave == "2":
+                                print("")
+                                print("You decide to go back to the village")
+                                print("")
+                                print("a random person comes to you and says...")
+                                print('"Hello, Would you like to fight with the crusher?"')
+                               
+                                print("")
+                                print("(1) Fight the crusher")
+                                print("(2) Say NO")
+                                
+                                print("")
+                                fight = input("Select a option (use the number): ")
+                                fight = str(fight)
+
+                                if fight == "1":
+                                    print("")
+                                    print("You decide to fight him")
+                                    print("")
+                                    print("To fight him we are going to play a game of rock paper scissors... looser gets shot")
+                                    print("")
+
+                                    player = input("choose rock, paper or scissor: ")
+
+                                    bot = random.randint(1, 3)
+                                    bot = str(bot)
+
+                                    if bot == "1":
+                                        if player == "rock":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "paper":
+                                            print("The crusher got rock")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "scissors":
+                                            print("The crusher did rock, You lose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                    if bot == "2":
+                                        if player == "rock":
+                                            print("The crusher did paper, you loose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "paper":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "scissors":
+                                            print("The crusher did paper, you win!")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                    if bot == "3":
+                                        if player == "rock":
+                                            print("The crusher did scissors")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "paper":
+                                            print("The crusher did scissors, You loose!")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "scissors":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+                                    
+
+                                if fight == "2":
+                                    print("")
+                                    print("You said No and he got mad at you")
+                                    print("He then decided to shoot you :(")
+                                    print("")
+                                    GameOver()
+
+                        if explore == "2":
+                            print("")
+                            print("You return back to Earth")
+                            print("So lame")
+                            print("")
+                            Sad()
+
+
+
+                    if roll2 == "6":
+                        
+                        print("")
+                        print("you rolled a 6!")
+                        print("Well I had fun playing with u but I have to go now, make sure u explore our town")
+                        print("")
+                        print("(1) You explore the town")
+                        print("(2) You go back to Earth")
+
+                        explore = input("Choose an option (Use the numbers)")
+                        explore = str(explore)
+
+
+                        if explore == "1":
+                            
+                            print("")
+                            print("You decide to explore the village!")
+                            print("While exploring you fall into the cave...  ")
+                            print("")
+                            print("(1) Explore the cave")
+                            print("(2) Go further into the cave")
+                            print("")
+
+                            cave = input("select a option (use the number)")
+                            cave = str(cave)
+
+                            if cave == "1":
+                                
+                                print("")
+                                print("You go further into the cave and you see a Giant...")
+                                print("")
+                                print("(1) Fight the giant")
+                                print("(2) Leave the cave")
+                                print("")
+
+                                giant = input("Select a option (use the number): ")
+                                giant = str(giant)
+
+                                if giant == "1":
+                                    
+                                    print("")
+                                    print("did you actually think that you could take down a giant?")
+                                    print("")
+                                    print("PATHETIC")
+                                    print("")
+                                    GameOver()
+                                
+                                if giant == "2":
+                                    print("you leave the cave and the people of the city get mad at you")
+                                    print("")
+                                    print("you get kicked out :( ")
+                                    print("")
+                                    Sad()
+
+
+                            if cave == "2":
+                                print("")
+                                print("You decide to go back to the village")
+                                print("")
+                                print("a random person comes to you and says...")
+                                print('"Hello, Would you like to fight with the crusher?"')
+                               
+                                print("")
+                                print("(1) Fight the crusher")
+                                print("(2) Say NO")
+                                
+                                print("")
+                                fight = input("Select a option (use the number): ")
+                                fight = str(fight)
+
+                                if fight == "1":
+                                    print("")
+                                    print("You decide to fight him")
+                                    print("")
+                                    print("To fight him we are going to play a game of rock paper scissors... looser gets shot")
+                                    print("")
+
+                                    player = input("choose rock, paper or scissor: ")
+
+                                    bot = random.randint(1, 3)
+                                    bot = str(bot)
+
+                                    if bot == "1":
+                                        if player == "rock":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "paper":
+                                            print("The crusher got rock")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "scissors":
+                                            print("The crusher did rock, You lose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                    if bot == "2":
+                                        if player == "rock":
+                                            print("The crusher did paper, you loose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "paper":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "scissors":
+                                            print("The crusher did paper, you win!")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                    if bot == "3":
+                                        if player == "rock":
+                                            print("The crusher did scissors")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "paper":
+                                            print("The crusher did scissors, You loose!")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "scissors":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+                                    
+
+                                if fight == "2":
+                                    print("")
+                                    print("You said No and he got mad at you")
+                                    print("He then decided to shoot you :(")
+                                    print("")
+                                    GameOver()
+
+                        if explore == "2":
+                            print("")
+                            print("You return back to Earth")
+                            print("So lame")
+                            print("")
+                            Sad()
+
+
+
+                    if roll2 == "5":
+                        
+                        print("")
+                        print("you rolled a 4!")
+                        print("Well I had fun playing with u but I have to go now, make sure u explore our town")
+                        print("")
+                        print("(1) You explore the town")
+                        print("(2) You go back to Earth")
+
+                        explore = input("Choose an option (Use the numbers)")
+                        explore = str(explore)
+
+                    if ra == "2":
+                        print("")
+                        print("you rolled a 4!")
+                        print("Well I had fun playing with u but I have to go now, make sure u explore our town")
+                        print("")
+                        print("(1) You explore the town")
+                        print("(2) You go back to Earth")
+
+                        explore = input("Choose an option (Use the numbers): ")
+                        explore = str(explore)
+
+                        if explore == "1":
+                            
+                            print("")
+                            print("You decide to explore the village!")
+                            print("While exploring you fall into the cave...  ")
+                            print("")
+                            print("(1) Go further into the cave")
+                            print("(2) Go back to the town")
+                            print("")
+
+                            cave = input("select a option (use the number): ")
+                            cave = str(cave)
+
+                            if cave == "1":
+                                
+                                print("")
+                                print("You go further into the cave and you see a Giant...")
+                                print("")
+                                print("(1) Fight the giant")
+                                print("(2) Leave the cave")
+                                print("")
+
+                                giant = input("Select a option (use the number): ")
+                                giant = str(giant)
+
+                                if giant == "1":
+                                    
+                                    print("")
+                                    print("did you actually think that you could take down a giant?")
+                                    print("")
+                                    print("PATHETIC")
+                                    print("")
+                                    GameOver()
+                                
+                                if giant == "2":
+                                    print("you leave the cave and the people of the city get mad at you")
+                                    print("")
+                                    print("you get kicked out :( ")
+                                    print("")
+                                    Sad()
+
+
+                            if cave == "2":
+                                print("")
+                                print("You decide to go back to the village")
+                                print("")
+                                print("a random person comes to you and says...")
+                                print('"Hello, Would you like to fight with the crusher?"')
+                               
+                                print("")
+                                print("(1) Fight the crusher")
+                                print("(2) Say NO")
+                                
+                                print("")
+                                fight = input("Select a option (use the number): ")
+                                fight = str(fight)
+
+                                if fight == "1":
+                                    print("")
+                                    print("You decide to fight him")
+                                    print("")
+                                    print("To fight him we are going to play a game of rock paper scissors... looser gets shot")
+                                    print("")
+
+                                    player = input("choose rock, paper or scissor: ")
+
+                                    bot = random.randint(1, 3)
+                                    bot = str(bot)
+
+                                    if bot == "1":
+                                        if player == "rock":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "paper":
+                                            print("The crusher got rock")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "scissors":
+                                            print("The crusher did rock, You lose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                    if bot == "2":
+                                        if player == "rock":
+                                            print("The crusher did paper, you loose :(")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "paper":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+
+                                        if player == "scissors":
+                                            print("The crusher did paper, you win!")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                    if bot == "3":
+                                        if player == "rock":
+                                            print("The crusher did scissors")
+                                            print("Well you beat the crusher... you win I guess")
+                                            print("")
+                                            win()
+
+                                        if player == "paper":
+                                            print("The crusher did scissors, You loose!")
+                                            print("")
+                                            print("You got shot ")
+                                            print("")
+                                            GameOver()
+
+                                        if player == "scissors":
+                                            print("well, you got a tie... So now you are going to get kicked out")
+                                            print("")
+                                            print("bye")
+                                            print("")
+                                            kicked_out()
+                                    
+
+                                if fight == "2":
+                                    print("")
+                                    print("You said No and he got mad at you")
+                                    print("He then decided to shoot you :(")
+                                    print("")
+                                    GameOver()              
+
+                        if explore == "2":
+                            print("")
+                            print("You return back to Earth")
+                            print("So lame")
+                            print("")
+                            Sad()
+
+
+
+            if roll == "2":
+                print("")
+                print("So you rolled a 2... He invites you to a battle")
+                print("")
+                print("(1) accept the battle")
+                print("(2) decline the battle")
+                print("(3) ask him what the battle is")
+
+                btl = input("Select a option (use the number): ")
+                btl = str(btl)
+
+                if btl == "1":
+                    print("")
+                    print("You accept the battle")
+                    print("")
+                    print("(1) fight the destroyer")
+                    print("(2) leave the battle")
+                    
+                    opt1 = input("Select a option (use the number): ")
+                    opt1 = str(opt1)
+                    
+                    if opt1 == "1":
+                        print("")
+                        print("To fight the destroyer, we are going to play a game of rock paper scissors... looser gets shot")
+                        print("")
+                        
+
+                        player = input("choose rock, paper or scissor: ")
+
+                        bot = random.randint(1, 3)
+                        bot = str(bot)
+
+                        if bot == "1":
+                            if player == "rock":
+                                print("well, you got a tie... So now you are going to get kicked out")
+                                print("")
+                                print("bye")
+                                print("")
+                                kicked_out()
+
+                            if player == "paper":
+                                print("The destroyer got rock")
+                                print("Well you beat the destroyer... you win I guess")
+                                print("")
+                                win()
+
+                            if player == "scissors":
+                                print("The destroyer did rock, You lose :(")
+                                print("")
+                                print("You got shot ")
+                                print("")
+                                GameOver()
+
+                            if bot == "2":
+                                if player == "rock":
+                                    print("The destroyer did paper, you loose :(")
+                                    print("")
+                                    print("You got shot ")
+                                    print("")
+                                    GameOver()
+
+                                if player == "paper":
+                                    print("well, you got a tie... So now you are going to get kicked out")
+                                    print("")
+                                    print("bye")
+                                    print("")
+                                    kicked_out()
+
+                                if player == "scissors":
+                                    print("The destroyer did paper, you win!")
+                                    print("Well you beat the destroyer... you win I guess")
+                                    print("")
+                                    win()
+
+                            if bot == "3":
+                                if player == "rock":
+                                    print("The destroyer did scissors")
+                                    print("Well you beat the destroyer... you win I guess")
+                                    print("")
+                                    win()
+
+                                if player == "paper":
+                                    print("The destroyer did scissors, You loose!")
+                                    print("")
+                                    print("You got shot ")
+                                    print("")
+                                    GameOver()
+
+                                if player == "scissors":
+                                    print("well, you got a tie... So now you are going to get kicked out")
+                                    print("")
+                                    print("bye")
+                                    print("")
+                                    kicked_out()
+
+
+                if btl == "2":
+                    
+                    print("")
+                    print("He gets mad at you and decides to shoot you :(")
+                    print("")
+                    GameOver()
+
+                if btl == "3":
+                    print("")
+                    print("The battle is a game of rock, paper and scissors but the looser gets shot")
+                    print("")
+                    print("(1) fight the destroyer")
+                    print("(2) leave the battle")
+
+                    print("")
+                    btl2 = input("Select a option (use the number): ")
+                    btl2 = str(btl2)
+
+                    if btl2 == "1":
+                        
+                        player = input("choose rock, paper or scissor: ")
+
+                        bot = random.randint(1, 3)
+                        bot = str(bot)
+
+                        if bot == "1":
+                            if player == "rock":
+                                print("well, you got a tie... So now you are going to get kicked out")
+                                print("")
+                                print("bye")
+                                print("")
+                                kicked_out()
+
+                            if player == "paper":
+                                print("The destroyer got rock")
+                                print("Well you beat the destroyer... you win I guess")
+                                print("")
+                                win()
+
+                            if player == "scissors":
+                                print("The destroyer did rock, You lose :(")
+                                print("")
+                                print("You got shot ")
+                                print("")
+                                GameOver()
+
+                            if bot == "2":
+                                if player == "rock":
+                                    print("The destroyer did paper, you loose :(")
+                                    print("")
+                                    print("You got shot ")
+                                    print("")
+                                    GameOver()
+
+                                if player == "paper":
+                                    print("well, you got a tie... So now you are going to get kicked out")
+                                    print("")
+                                    print("bye")
+                                    print("")
+                                    kicked_out()
+
+                                if player == "scissors":
+                                    print("The destroyer did paper, you win!")
+                                    print("Well you beat the destroyer... you win I guess")
+                                    print("")
+                                    win()
+
+                            if bot == "3":
+                                if player == "rock":
+                                    print("The destroyer did scissors")
+                                    print("Well you beat the destroyer... you win I guess")
+                                    print("")
+                                    win()
+
+                                if player == "paper":
+                                    print("The destroyer did scissors, You loose!")
+                                    print("")
+                                    print("You got shot ")
+                                    print("")
+                                    GameOver()
+
+                                if player == "scissors":
+                                    print("well, you got a tie... So now you are going to get kicked out")
+                                    print("")
+                                    print("bye")
+                                    print("")
+                                    kicked_out()
+
+
+                    if btl2 == "2":
+                        print("")
+                        print("He gets mad at you and decides to shoot you :(")
+                        print("")
+                        GameOver()
+
+            if roll == "3":
+                
+                print("")
+                print("You rolled a 3!")
+                print("")
+                print("Would you like to play me in a game of Rock, Paper, scissors?? Ill give you a hundred bucks if you win!")
+                print("")
+                print("(1) Play him")
+                print("(2) Decline him")
+                print("(3) Ask him what happens if you loose")
+
+                print("")
+                t1 = input("Select an option (Use the numbers) : ")
+
+                if t1 == "1":
+
+                    player = input("choose rock, paper or scissor: ")
+
+                    bot = random.randint(1, 3)
+                    bot = str(bot)
+
+                    if bot == "1":
+                        if player == "rock":
+                            print("well, you got a tie... So now you are going to get kicked out")
+                            print("")
+                            print("bye")
+                            print("")
+                            kicked_out()
+
+                        if player == "paper":
+                            print("The destroyer got rock")
+                            print("Well you beat the destroyer... you win I guess")
+                            
+                            print("")
+                            print("So now that you have 100 dollars, what are you going to spend it on?")
+                            print("")
+                            print("(1) House")
+                            print("(2) Stone of great power")
+                            print("(3) Gun")
+                            print("(4) Smart Glasses")
+                            print("(5) Pear Mec Book Air")
+                            print("(6) Nekia 1")
+                            print("(7) Robot")
+                            print("(8) Map")
+                            print("(9) Bag")
+                            print("(10) Leave shop and buy later")
+
+                            shop = input("What do you want to buy or would u like to leave shop (10) : ")
+                            shop = str(shop)
+
+                            if shop == "1":
+                                print("")
+                                print("You decide to buy a house. But  you see, you only had 100 dollars so your house is made out of the finest quality cardboard...")
+                                print("but there is 1 problem... You dont have a floor or walls... have fun!")
+                                print("")
+                                print("A bear comes up to you... what will you do?")
+                                print("")
+                                print("(1) You run away from the bear")
+                                print("(2) You lay down and act like your dead")
+
+                                bear = input("Select a option (Use the number)")
+                                bear = str(bear)
+
+                                if bear == "1":
+                                    print("You decide to run away from the bear... Do you think you can out run a bear?")
+                                    print("")
+                                    print("(1) Yes")
+                                    print("(2) No")
+                                    print("Yes this is actually a question ;)")
+                                    print("")
+
+                                    stupid = input("Select a option (Use the number)")
+                                    stupid = str(stupid)
+
+                                    if stupid == "1":
+                                        print("")
+                                        print("Oh ma god... you are actually stupid")
+                                        print("")
+                                        Sad()
+
+                                    if stupid == "2":
+                                        print("")
+                                        print("Well I guess you are not that stupid but you still die.")
+                                        print("")
+
+                                        GameOver()
+
+                                if bear == "2":
+                                    print("")
+                                    print("You decide to lay down and act ded, the bear comes and looks at you and then walks away")
+                                    print("")
+                                    pass
+
+                            if shop == "2":
+                                pass
+                            #TODO:
+
+                            if shop == "3":
+                                pass
+                            #TODO:
+
+                            if shop == "4":
+                                pass
+                            #TODO:
+
+                            if shop == "5":
+                                pass
+                            #TODO:
+
+                            if shop == "6":
+                                pass
+                            #TODO:
+
+                            if shop == "7":
+                                pass
+                            #TODO:
+
+                            if shop == "8":
+                                pass
+                            #TODO:
+
+                            if shop == "9":
+                                pass 
+                            #TODO:
+
+                            if shop == "10":
+                                pass
+                            #TODO:
+
+
+                        if player == "scissors":
+                            print("The destroyer did rock, You lose :(")
+                            print("")
+                            print("You got shot ")
+                            print("")
+                            GameOver()
+
+                        if bot == "2":
+                            if player == "rock":
+                                print("The destroyer did paper, you loose :(")
+                                print("")
+                                print("You got shot ")
+                                print("")
+                                GameOver()
+
+                            if player == "paper":
+                                print("well, you got a tie... So now you are going to get kicked out")
+                                print("")
+                                print("bye")
+                                print("")
+                                kicked_out()
+
+                            if player == "scissors":
+                                print("The destroyer did paper, you win!")
+                                print("Well you beat the destroyer... you win I guess")
+                                
+                                #TODO:
+
+                        if bot == "3":
+                            if player == "rock":
+                                print("The destroyer did scissors")
+                                print("Well you beat the destroyer... you win I guess")
+                                
+                                #TODO:
+
+                            if player == "paper":
+                                print("The destroyer did scissors, You loose!")
+                                print("")
+                                print("You got shot ")
+                                print("")
+                                GameOver()
+
+                            if player == "scissors":
+                                print("well, you got a tie... So now you are going to get kicked out")
+                                print("")
+                                print("bye")
+                                print("")
+                                kicked_out()
+
+                if t1 == "2":
+                    print("")
+                    print("You decline the game and everyone laughs at you")
+                    print("")
+                    Sad()
+                
+                if t1 == "3":
+                    pass
+                    #TODO
+
+            if roll == "4":
+                pass
+                #TODO:
+
+            if roll == "5":
+                pass
+                #TODO:
+
+            if roll == "6":
+                pass
+                #TODO:
+
+        if dice == "2":
+            pass # IMPORTANT
+            #TODO:
+
+        if dice == "3":
+            pass # IMPORTANT
+            #TODO:
+
+    if world == "2":
+
+        print("")
+        print("w2")
+        # TODO:
+    
+    if world == "3":
+
+        print("")
+        print("w3")
+        #TODO:
+
+    if world == "4":
+
+        randomWorld = random.randint(1, 3)
+        randomWorld = str(randomWorld)
+
+        if randomWorld == "1":
+
+            print("")
+            print("rw1")
+            #TODO:
+
+        if randomWorld == "2":
+
+            print("")
+            print("wr2")
+            #TODO:
+
+        if randomWorld == "3":
+
+            print("")
+            print("wr3")
+            #TODO:
+
+
+
+if start == "GUI":
+    print("GUI")
+    #TODO:
+
+
+
+
+# TODO: SECONDARY's
+if start == "tbi":
+    print("TBI")
+
+if start == "gui":
+    print("GUI")
